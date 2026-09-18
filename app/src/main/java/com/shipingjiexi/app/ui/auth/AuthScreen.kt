@@ -150,7 +150,7 @@ fun AuthScreen(
 
             // 月影 APP 图标（狗狗）
             Image(
-                painter = painterResource(R.mipmap.ic_launcher),
+                painter = painterResource(R.drawable.yy_logo),
                 contentDescription = "视频解析",
                 modifier = Modifier.size(84.dp).clip(CircleShape),
                 contentScale = ContentScale.Crop
