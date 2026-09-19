@@ -59,6 +59,7 @@ import com.shipingjiexi.app.ui.adapter.HomeAdapter
 import com.shipingjiexi.app.ui.adapter.SearchSuggestionsAdapter
 import com.shipingjiexi.app.ui.more.cookies.WebViewActivity
 import com.shipingjiexi.app.util.Extensions.enableFastScroll
+import com.shipingjiexi.app.util.Extensions.extractURL
 import com.shipingjiexi.app.util.Extensions.isURL
 import com.shipingjiexi.app.util.NotificationUtil
 import com.shipingjiexi.app.util.ThemeUtil
@@ -699,8 +700,10 @@ class HomeFragment : Fragment(), HomeAdapter.OnItemClickListener, SearchSuggesti
             }
             queriesChipGroup!!.removeAllViews()
         }
-        if (searchView.editText.text.isNotBlank()) {
-            queryList.add(searchView.editText.text.toString())
+        val input = searchView.editText.text.toString().trim()
+        if (input.isNotBlank()) {
+            // 自动从各平台分享文案中提取链接（抖音/快手/小红书/B站/YouTube 等）
+            queryList.add(input.extractURL())
         }
 
         if (queryList.isEmpty()) return
@@ -979,8 +982,11 @@ class HomeFragment : Fragment(), HomeAdapter.OnItemClickListener, SearchSuggesti
 
         return kotlin.runCatching {
             val clipboard = requireContext().getSystemService(CLIPBOARD_SERVICE) as ClipboardManager
-            val clip = clipboard.primaryClip!!.getItemAt(0).text
-            return clip.split("\r","\n").map { it.trim() }.filter { Patterns.WEB_URL.matcher(it).matches() }
+            val clip = clipboard.primaryClip!!.getItemAt(0).text ?: return@runCatching null
+            // 从整段分享文案中自动提取所有 URL（兼容抖音/快手/小红书等带文字的分享，全平台通用）
+            val urlRegex = Regex("(http|ftp|https)://([\\w_-]+(?:\\.[\\w_-]+)+)([\\w.,@?^=%&:/~+#-]*[\\w@?^=%&/~+#-])")
+            val urls = urlRegex.findAll(clip).map { it.value }.toSet().toList()
+            urls.ifEmpty { null }
         }.getOrNull()
     }
 
