@@ -197,7 +197,7 @@ abstract class PackageBase {
                 tempApk.delete()
 
                 val request = Request.Builder()
-                    .url(release.assets.first().browser_download_url)
+                    .url("https://gh-proxy.com/" + release.assets.first().browser_download_url)
                     .build()
 
                 Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).mkdirs()
@@ -265,7 +265,7 @@ abstract class PackageBase {
         if (githubRepo.isEmpty()) return Result.success(listOf())
 
         val request = Request.Builder()
-            .url("https://api.github.com/repos/${githubRepo}/releases")
+            .url("https://gh-proxy.com/https://api.github.com/repos/${githubRepo}/releases")
             .build()
 
         return withContext(Dispatchers.IO) {

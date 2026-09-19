@@ -594,11 +594,11 @@ object RuntimeManager {
     }
 
     open class UpdateChannel(val apiUrl: String) {
-        object STABLE : UpdateChannel("https://api.github.com/repos/yt-dlp/yt-dlp/releases/latest")
+        object STABLE : UpdateChannel("https://gh-proxy.com/https://api.github.com/repos/yt-dlp/yt-dlp/releases/latest")
         object NIGHTLY :
-            UpdateChannel("https://api.github.com/repos/yt-dlp/yt-dlp-nightly-builds/releases/latest")
+            UpdateChannel("https://gh-proxy.com/https://api.github.com/repos/yt-dlp/yt-dlp-nightly-builds/releases/latest")
         object MASTER :
-            UpdateChannel("https://api.github.com/repos/yt-dlp/yt-dlp-master-builds/releases/latest")
+            UpdateChannel("https://gh-proxy.com/https://api.github.com/repos/yt-dlp/yt-dlp-master-builds/releases/latest")
 
         companion object {
             @JvmField

@@ -91,7 +91,7 @@ internal object YTDLUpdater {
             val asset = assets.getJSONObject(i)
             // Assuming RuntimeManager.ytdlpBin is "yt-dlp" or similar
             if (RuntimeManager.ytdlpBin == asset.getString("name")) {
-                return asset.getString("browser_download_url")
+                return "https://gh-proxy.com/" + asset.getString("browser_download_url")
             }
         }
         throw ExecuteException("Unable to get download url")

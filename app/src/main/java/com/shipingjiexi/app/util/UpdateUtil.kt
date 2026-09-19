@@ -91,7 +91,7 @@ class UpdateUtil(var context: Context) {
     }
 
     fun getGithubReleases(): List<GithubRelease> {
-        val url = "https://api.github.com/repos/Wuaqingzhi/shippingjiex/releases"
+        val url = "https://gh-proxy.com/https://api.github.com/repos/Wuaqingzhi/shippingjiex/releases"
         val conn: HttpURLConnection
         var json = listOf<GithubRelease>()
         try {
@@ -175,7 +175,7 @@ class UpdateUtil(var context: Context) {
 
                 //download
                 val request = Request.Builder()
-                    .url(releaseVersion.browser_download_url)
+                    .url("https://gh-proxy.com/" + releaseVersion.browser_download_url)
                     .build()
 
                 val response = sharedClient.newCall(request).execute()

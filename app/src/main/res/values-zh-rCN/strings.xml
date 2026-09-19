@@ -577,7 +577,7 @@
     <plurals name="every_minutes">
         <item quantity="other">每 %d 分钟</item>
     </plurals>
-    <string name="bgutils_info">yt-dlp 的来源证明令牌 (POT) 提供方。\n启用后，YTDLnis 托管生成 POT 的 HTTP 服务器并安装 yt-dlp 使用的相关插件。</string>
+    <string name="bgutils_info">yt-dlp 的来源证明令牌 (POT) 提供方。\n启用后，视频解析 托管生成 POT 的 HTTP 服务器并安装 yt-dlp 使用的相关插件。</string>
     <string name="bgutils_pot_generation_script">生成脚本</string>
     <string name="bgutils_pot_generation_server">HTTP 服务器</string>
     <string name="bgutils_pot_generation_script_summary">每个 yt-dlp 调用都会造成导致新的 js 运行时进程来运行该脚本的开销。高并发使用不推荐此方法。</string>
@@ -590,7 +590,7 @@
     <string name="notset">未设置</string>
     <string name="external">外部</string>
     <string name="exit">退出</string>
-    <string name="packages_description">包是 YTDLins 用来帮助 yt-dlp 命令的助手程序。其中一些已捆绑在本应用中，但你可以无需更新本应用就安装已发布的更新版本。已安装的 apk 替换本应用所用的捆绑版本。</string>
+    <string name="packages_description">包是 视频解析 用来帮助 yt-dlp 命令的助手程序。其中一些已捆绑在本应用中，但你可以无需更新本应用就安装已发布的更新版本。已安装的 apk 替换本应用所用的捆绑版本。</string>
     <string name="bgutils_pot_generation_script_info">为了使用 BgUtils POT 提供方，本应用需从 github 下载 Brainicism/bgutil-ytdlp-pot-provider 代码库并发起安装。可能需要一会儿才能完成。要继续吗？</string>
     <string name="burn_subs">烧录字幕</string>
     <string name="check_clipboard">应用启动时检查剪贴板</string>

@@ -62,7 +62,7 @@ object BgUtilsPoTokenGeneratorUtil {
         progress?.invoke("Downloading latest repository code...")
         val zipFile = File(serverFolder, "tmp.zip")
         withContext(Dispatchers.IO) {
-            URI.create("https://github.com/Brainicism/bgutil-ytdlp-pot-provider/archive/refs/heads/master.zip")
+            URI.create("https://gh-proxy.com/https://github.com/Brainicism/bgutil-ytdlp-pot-provider/archive/refs/heads/master.zip")
                 .toURL().openStream()
         }.use { input ->
                 zipFile.outputStream().use { output ->
