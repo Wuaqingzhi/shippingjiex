@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name">视频解析</string>
     <string name="worst_quality">Worst quality</string>
     <string name="best_quality">Best quality</string>
     <string name="search">Search</string>
@@ -567,7 +568,7 @@
     <string name="no_delay">No delay set</string>
     <string name="waiting_download_delay">Waiting download delay (%s seconds)…</string>
     <plurals name="every_minutes"><item quantity="one">Every minute</item><item quantity="other">Every %d minutes</item></plurals>
-    <string name="bgutils_info">A proof-of-origin token (POT) provider for yt-dlp.\nWith it enabled, YTDLnis hosts the HTTP server that generates the POT and installs the related plugin that yt-dlp uses.</string>
+    <string name="bgutils_info">A proof-of-origin token (POT) provider for yt-dlp.\nWith it enabled, 视频解析 hosts the HTTP server that generates the POT and installs the related plugin that yt-dlp uses.</string>
     <string name="bgutils_pot_generation_script">Generation script</string>
     <string name="bgutils_pot_generation_server">HTTP Server</string>
     <string name="bgutils_pot_generation_script_summary">Every yt-dlp call incurs the overhead of spawning a new js runtime process to run the script. This method is not recommended for high concurrency usage.</string>
@@ -580,7 +581,7 @@
     <string name="notset">Not set</string>
     <string name="external">External</string>
     <string name="exit">Exit</string>
-    <string name="packages_description">Packages are helper applications YTDLnis uses to help with yt-dlp commands. Some of them are already bundled, but you can install newer versions that are published without the need to update the app. The installed apk\'s replace the bundled version that the app uses.</string>
+    <string name="packages_description">Packages are helper applications 视频解析 uses to help with yt-dlp commands. Some of them are already bundled, but you can install newer versions that are published without the need to update the app. The installed apk\'s replace the bundled version that the app uses.</string>
     <string name="bgutils_pot_generation_script_info">In order to use the BgUtils POT Provider, the app needs to download Brainicism/bgutil-ytdlp-pot-provider repo from github and initiate the installation. This might take a while to finish. Proceed now?</string>
     <string name="burn_subs">Burn subtitles</string>
     <string name="check_clipboard">Check clipboard on app startup</string>

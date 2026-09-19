@@ -46,8 +46,6 @@ import com.afollestad.materialdialogs.utils.MDUtil.getStringArray
 import com.afollestad.materialdialogs.utils.MDUtil.textChanged
 import com.anggrayudi.storage.file.getAbsolutePath
 import com.shipingjiexi.app.core.RuntimeManager
-import com.shipingjiexi.app.data.repository.AuthRepository
-import com.shipingjiexi.app.ui.auth.AuthActivity
 import com.shipingjiexi.app.database.DBManager
 import com.shipingjiexi.app.database.enums.DownloadType
 import com.shipingjiexi.app.database.repository.DownloadRepository
@@ -118,12 +116,6 @@ class MainActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        // 云端账号门禁：未登录先进登录页
-        if (!AuthRepository.isLoggedIn(this)) {
-            startActivity(Intent(this, AuthActivity::class.java))
-            finish()
-            return
-        }
         CrashListener(this).registerExceptionHandler()
         ThemeUtil.updateTheme(this)
         window.navigationBarColor = SurfaceColors.SURFACE_2.getColor(this)

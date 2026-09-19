@@ -10,8 +10,8 @@ plugins {
 
 def properties = new Properties()
 def versionMajor = 1
-def versionMinor = 9
-def versionPatch = 1
+def versionMinor = 0
+def versionPatch = 0
 def versionBuild = 0 // bump for dogfood builds, public betas, etc.
 //WHEN RELEASING BETA KEEP THE SAME VERSION AS LATEST STABLE, SO USERS CAN DOWNGRADE
 def isBeta = false
@@ -48,7 +48,8 @@ android {
         applicationId "com.shipingjiexi.app"
         minSdk 24
         targetSdk 36
-        versionCode versionMajor * 1000000 + versionMinor * 10000 + versionPatch * 100 + versionBuild
+        // versionCode 加 1000000 偏移：保证从 1.0.0 起高于旧版 1.9.x，可覆盖安装
+        versionCode versionMajor * 1000000 + versionMinor * 10000 + versionPatch * 100 + versionBuild + 1000000
         versionName "${versionMajor}.${versionMinor}.${versionPatch}${versionExt}"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         archivesBaseName = "shipingjiexi-$versionName"
@@ -234,8 +235,6 @@ dependencies {
     implementation 'org.jetbrains.kotlinx:kotlinx-serialization-json:1.9.0'
     implementation 'it.xabaras.android:recyclerview-swipedecorator:1.4'
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.10.0"
-    implementation "androidx.lifecycle:lifecycle-runtime-compose:2.10.0"
-    implementation "androidx.lifecycle:lifecycle-viewmodel-compose:2.10.0"
     implementation "com.neoutils.highlight:highlight-view:2.3.0"
 
     // For media playback using ExoPlayer
@@ -252,7 +251,6 @@ dependencies {
     implementation 'me.zhanghai.android.fastscroll:library:1.3.0'
     implementation 'com.google.accompanist:accompanist-webview:0.36.0'
     implementation 'androidx.compose.material3:material3-android:1.4.0'
-    implementation 'androidx.compose.material:material-icons-extended:1.7.8'
     implementation "io.noties.markwon:core:4.6.2"
     implementation("com.github.teamnewpipe:newpipeextractor:v0.26.5")
 
